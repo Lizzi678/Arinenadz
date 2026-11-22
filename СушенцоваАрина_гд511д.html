@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Учебный сайт</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: #1f2937;
+      color: #fff;
+      padding: 15px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo img {
+      height: 45px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    section {
+      padding: 50px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    h1,
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #1d4ed8;
+    }
+
+    .task {
+      background: #eef2ff;
+      border-left: 5px solid #2563eb;
+      padding: 10px 15px;
+      margin-bottom: 25px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    form {
+      max-width: 600px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .hummus {
+      max-width: 800px;
+    }
+
+    .hummus h1 {
+      color: #2c7a3f;
+    }
+
+    .hummus h2 {
+      margin-top: 30px;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 5px;
+    }
+
+    .hummus ul,
+    .humus ol {
+      margin: 10px 0 20px 25px;
+    }
+
+    .hummus li {
+      margin-bottom: 6px;
+    }
+
+    .note {
+      background: #fff7e6;
+      border-left: 4px solid #f59e0b;
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
+
+    img {
+      display: block;
+      border-radius: 8px;
+      margin: 15px 0;
+      object-fit: cover;
+    }
+
+    .img-small {
+      width: 200px;
+      height: 150px;
+    }
+
+    .img-medium {
+      width: 350px;
+      height: 250px;
+    }
+
+    .img-large {
+      width: 100%;
+      height: 300px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    caption {
+      caption-side: top;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px;
+      color: #2c7a3f;
+    }
+
+    th,
+    td {
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #e7f5ec;
+    }
+
+    tfoot td {
+      background: #f3f4f6;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #1f2937;
+      color: #d1d5db;
+      padding: 40px 0 20px;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-columns h3 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .social-links a {
+      color: #60a5fa;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .copyright {
+      margin-top: 30px;
+      text-align: center;
+      border-top: 1px solid #374151;
+      padding-top: 15px;
+    }
+
+    @media (max-width: 700px) {
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="#task1">
+          <img src="logo.png" alt="Логотип компании">
+        </a>
+      </div>
+
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a href="#task1">Задание 1</a></li>
+          <li><a href="#task2">Задание 2</a></li>
+          <li><a href="#task3">Задание 3</a></li>
+          <li><a href="#task4">Задание 4</a></li>
+        </ul>
+      </nav>
+
+      <div class="contact-info">
+        <p>
+          Телефон:
+          <a href="tel:+71234567890" style="color: #60a5fa;">+7 (123) 456-78-90</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ЗАДАНИЕ 1 -->
+    <section id="task1">
+      <div class="container">
+        <div class="task">
+          Задание 1. Шапка, навигация, услуги, форма обратной связи и подвал
+        </div>
+
+        <h1>Современные решения для вашего бизнеса</h1>
+        <p>
+          Мы создаём адаптивные сайты, которые помогают привлекать клиентов
+          и развивать компанию.
+        </p>
+
+        <a href="#services" class="button">Посмотреть услуги</a>
+
+        <div id="services" class="services-grid">
+          <article class="service-card">
+            <img src="images/service1.jpg" alt="Иллюстрация услуги веб-разработки">
+            <h3>Веб-разработка</h3>
+            <p>Создание современных адаптивных сайтов любой сложности.</p>
+            <a href="#task1" class="button">Подробнее</a>
+          </article>
+
+          <article class="service-card">
+            <img src="images/service2.jpg" alt="Иллюстрация услуги дизайна интерфейсов">
+            <h3>Дизайн интерфейсов</h3>
+            <p>Разработка удобных и понятных интерфейсов для сайтов и приложений.</p>
+            <a href="#task1" class="button">Подробнее</a>
+          </article>
+
+          <article class="service-card">
+            <img src="images/service3.jpg" alt="Иллюстрация услуги продвижения сайтов">
+            <h3>Продвижение</h3>
+            <p>SEO-оптимизация и реклама для привлечения целевой аудитории.</p>
+            <a href="#task1" class="button">Подробнее</a>
+          </article>
+        </div>
+
+        <h2>Форма обратной связи</h2>
+
+        <form action="/send-message" method="post">
+          <div class="form-group">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="button">Отправить</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ЗАДАНИЕ 2 -->
+    <section id="task2">
+      <div class="container hummus">
+        <div class="task">
+          Задание 2. Работа с текстом: заголовки, абзацы и выделения
+        </div>
+
+        <h1>Быстрый рецепт хумуса</h1>
+
+        <p>
+          Этот рецепт позволяет <strong>быстро приготовить вкусный хумус</strong>
+          без лишних хлопот. Он адаптирован из множества разных рецептов,
+          которые я читала на протяжении многих лет.
+        </p>
+
+        <p>
+          <em>Хумус</em> — это вкусная густая паста, широко используемая
+          в греческой и ближневосточной кухне. Он очень вкусен с салатами,
+          жареным мясом и питой.
+        </p>
+
+        <h2>Инструкции</h2>
+
+        <ol>
+          <li>Очистите чеснок от кожуры и крупно нарежьте.</li>
+          <li>Удалите все семена и плодоножку из перца и крупно нарежьте.</li>
+          <li>Положите все ингредиенты в кухонный комбайн.</li>
+          <li>Измельчите все ингредиенты до состояния пасты.</li>
+          <li>Если вы хотите получить хумус с крупными кусочками, измельчайте его в блендере недолго.</li>
+          <li>Если вы хотите получить гладкий хумус, измельчайте его дольше.</li>
+        </ol>
+
+        <p>
+          Для разнообразия вкуса можно добавить немного лимона и кинзы,
+          перца чили, лайма и чипотле, хариссы и мяты или шпината и сыра фета.
+          <strong>Экспериментируйте</strong> и смотрите, что вам больше нравится.
+        </p>
+
+        <h2>Хранение</h2>
+
+        <p>
+          Хумус следует хранить в холодильнике в герметичном контейнере.
+          Он может храниться <strong>около недели</strong> после приготовления.
+        </p>
+
+        <p class="note">
+          <strong>Важно:</strong> если хумус начнёт шипеть,
+          его следует выбросить.
+        </p>
+
+        <p>
+          Хумус можно замораживать; разморозьте его и используйте
+          в течение нескольких месяцев.
+        </p>
+      </div>
+    </section>
+
+    <!-- ЗАДАНИЕ 3 -->
+    <section id="task3">
+      <div class="container hummus">
+        <div class="task">
+          Задание 3. Работа с изображениями: 5 изображений, ALT и TITLE
+        </div>
+
+        <img
+          class="img-large"
+          src="images/hummus-main.jpg"
+          alt="Тарелка с готовым хумусом, оливковым маслом и зеленью"
+          title="Готовый хумус"
+        >
+
+        <img
+          class="img-medium"
+          src="images/ingredients.jpg"
+          alt="Ингредиенты для приготовления хумуса"
+          title="Необходимые ингредиенты"
+        >
+
+        <img
+          class="img-small"
+          src="images/garlic.jpg"
+          alt="Очищенный зубчик чеснока"
+          title="Чеснок"
+        >
+
+        <img
+          class="img-medium"
+          src="images/blender.jpg"
+          alt="Кухонный комбайн с ингредиентами для хумуса"
+          title="Измельчение ингредиентов"
+        >
+
+        <img
+          class="img-small"
+          src="images/lemon.jpg"
+          alt="Лимон и свежая зелень рядом с хумусом"
+          title="Добавки для вкуса"
+        >
+      </div>
+    </section>
+
+    <!-- ЗАДАНИЕ 4 -->
+    <section id="task4">
+      <div class="container">
+        <div class="task">
+          Задание 4. Таблица ингредиентов с объединением строк и ячеек
+        </div>
+
+        <table>
+          <caption>Ингредиенты для хумуса</caption>
+
+          <thead>
+            <tr>
+              <th>Ингредиент</th>
+              <th>Количество</th>
+              <th>Назначение</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td rowspan="2">Нут</td>
+              <td>1 банка</td>
+              <td>Основа хумуса</td>
+            </tr>
+
+            <tr>
+              <td>400 г</td>
+              <td>Масса нетто</td>
+            </tr>
+
+            <tr>
+              <td>Тахини</td>
+              <td>175 г</td>
+              <td>Кунжутная паста для вкуса</td>
+            </tr>
+
+            <tr>
+              <td>Вяленые помидоры</td>
+              <td>6 штук</td>
+              <td>Дополнительный вкус</td>
+            </tr>
+
+            <tr>
+              <td>Красный перец</td>
+              <td>Половина</td>
+              <td>Аромат и цвет</td>
+            </tr>
+
+            <tr>
+              <td>Кайенский перец</td>
+              <td>Щепотка</td>
+              <td>Острота</td>
+            </tr>
+
+            <tr>
+              <td>Чеснок</td>
+              <td>1 зубчик</td>
+              <td>Аромат</td>
+            </tr>
+
+            <tr>
+              <td>Оливковое масло</td>
+              <td>По вкусу</td>
+              <td>Гладкая текстура и вкус</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td colspan="2">Общее количество основных ингредиентов</td>
+              <td>7 видов</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-columns">
+      <div class="column">
+        <h3>О компании</h3>
+        <p>Краткая информация о нашей компании и ценностях.</p>
+      </div>
+
+      <div class="column">
+        <h3>Контакты</h3>
+        <address>
+          г. Москва, ул. Примерная, д. 123<br>
+          Email:
+          <a href="mailto:info@example.com" style="color: #60a5fa;">info@example.com</a><br>
+          Телефон:
+          <a href="tel:+71234567890" style="color: #60a5fa;">+7 (123) 456-78-90</a>
+        </address>
+      </div>
+
+      <div class="column">
+        <h3>Следите за нами</h3>
+        <div class="social-links">
+          <a href="#">Twitter</a>
+          <a href="#">YouTube</a>
+          <a href="#">Telegram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>© 2026 Название компании. Все права защищены.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
